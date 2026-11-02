@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fce8ef">
+  <title>Para Zaira ♡</title>
+  <style>
+    :root {
+      --pink: #f7d8e3;
+      --pink-strong: #d982a2;
+      --rose: #a94f70;
+      --ink: #654454;
+      --cream: #fffafd;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at 10% 8%, #fff 0 2px, transparent 3px),
+        linear-gradient(180deg, #fffafd 0%, #fce8ef 48%, #fffafd 100%);
+      overflow-x: hidden;
+    }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .hearts { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+    .heart {
+      position: absolute; bottom: -35px; color: #e9a9bf; opacity: .5;
+      animation: floatUp linear infinite;
+    }
+    @keyframes floatUp {
+      from { transform: translateY(0) rotate(0deg); opacity: 0; }
+      15% { opacity: .55; }
+      to { transform: translateY(-110vh) rotate(25deg); opacity: 0; }
+    }
+    main { position: relative; z-index: 1; }
+    .hero {
+      min-height: 100svh; display: grid; place-items: center; text-align: center;
+      padding: 56px 22px; position: relative;
+    }
+    .hero-card {
+      width: min(100%, 720px); padding: clamp(30px, 7vw, 66px) 24px;
+      border: 1px solid #f1d2de; border-radius: 30px;
+      background: rgba(255,255,255,.72);
+      box-shadow: 0 18px 60px rgba(169,79,112,.10);
+      backdrop-filter: blur(8px);
+    }
+    .eyebrow { letter-spacing: .22em; text-transform: uppercase; font: 11px Arial, sans-serif; color: #b87991; }
+    h1 { color: var(--rose); font-size: clamp(3.1rem, 12vw, 6.4rem); font-weight: 400; margin: 16px 0 8px; }
+    .subtitle { font-size: clamp(1.1rem, 4vw, 1.45rem); line-height: 1.7; max-width: 510px; margin: 0 auto 28px; }
+    .small-heart { color: var(--pink-strong); font-size: 25px; }
+    .btn {
+      border: 0; border-radius: 999px; padding: 14px 23px; cursor: pointer;
+      background: var(--rose); color: white; font: 14px Arial, sans-serif;
+      text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
+      transition: transform .2s, box-shadow .2s;
+      box-shadow: 0 8px 20px rgba(169,79,112,.2);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 11px 24px rgba(169,79,112,.25); }
+    section { padding: 76px 20px; }
+    .wrap { width: min(100%, 780px); margin: 0 auto; }
+    .section-label { text-align: center; color: #b87991; font: 11px Arial, sans-serif; letter-spacing: .2em; text-transform: uppercase; }
+    h2 { color: var(--rose); text-align: center; font-size: clamp(2rem, 7vw, 3rem); font-weight: 400; margin: 12px 0 30px; }
+    .paper {
+      background: rgba(255,255,255,.82); border: 1px solid #f0d6e0;
+      border-radius: 24px; padding: clamp(24px, 6vw, 42px);
+      box-shadow: 0 12px 38px rgba(169,79,112,.07); line-height: 1.9; font-size: 1.08rem;
+    }
+    .paper p { margin: 0 0 17px; }
+    .paper p:last-child { margin-bottom: 0; }
+    .memory {
+      text-align: center; background: rgba(255,255,255,.68);
+      border: 1px solid #f0d6e0; border-radius: 22px; padding: 28px 22px;
+    }
+    .memory .icon { font-size: 34px; }
+    .memory p { line-height: 1.8; margin-bottom: 0; }
+    .reasons { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 13px; }
+    .reason {
+      min-height: 100px; padding: 20px 14px; border: 1px solid #efd1dc;
+      border-radius: 18px; background: rgba(255,255,255,.8); color: var(--rose);
+      font: 14px Arial, sans-serif; cursor: pointer; line-height: 1.5;
+    }
+    .reason span { display: block; font-size: 22px; margin-bottom: 8px; }
+    .reason:active { transform: scale(.98); }
+    .song { text-align: center; }
+    .vinyl {
+      width: 118px; height: 118px; border-radius: 50%; margin: 0 auto 20px;
+      background: repeating-radial-gradient(circle, #4e3441 0 2px, #694656 3px 5px);
+      display: grid; place-items: center; box-shadow: 0 10px 25px #9b637744;
+      animation: spin 8s linear infinite;
+    }
+    .vinyl::after { content: "♡"; width: 34px; height: 34px; display: grid; place-items: center;
+      border-radius: 50%; background: #f4cbd9; color: var(--rose); font-size: 20px; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .song-note { font: 13px Arial, sans-serif; line-height: 1.7; color: #91697a; margin: 16px auto 22px; max-width: 440px; }
+    .final {
+      min-height: 68vh; display: grid; place-items: center; text-align: center;
+      background: linear-gradient(180deg, transparent, rgba(247,216,227,.55));
+    }
+    .final h2 { font-size: clamp(3.6rem, 15vw, 7rem); margin: 8px 0; }
+    .final p { font-size: 1.05rem; line-height: 1.8; }
+    footer { text-align: center; padding: 20px; color: #b87991; font: 11px Arial, sans-serif; }
+    .hidden-message { display: none; margin-top: 15px; color: #9e5875; font-style: italic; }
+    .hidden-message.show { display: block; animation: appear .5s ease; }
+    @keyframes appear { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 480px) {
+      .reasons { grid-template-columns: 1fr; }
+      section { padding: 58px 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts" aria-hidden="true"></div>
+  <main>
+    <header class="hero">
+      <div class="hero-card">
+        <div class="eyebrow">Una pequeña sorpresa para ti</div>
+        <div class="small-heart">♡</div>
+        <h1>Para Zaira</h1>
+        <p class="subtitle">Hay algo que quiero decirte…<br>y preparé este pequeño rincón para hacerlo.</p>
+        <a class="btn" href="#historia">Abrir mi corazón&nbsp; ♡</a>
+      </div>
+    </header>
+
+    <section id="historia">
+      <div class="wrap">
+        <div class="section-label">Donde comenzó todo</div>
+        <h2>Una noche especial</h2>
+        <div class="memory">
+          <div class="icon">♫ ♡</div>
+          <p>Nos conocimos en un baile, y sin imaginarlo, aquella noche se convirtió en el comienzo de algo muy bonito. Entre tantas personas y tantos momentos, tuve la suerte de encontrarte a ti. Si pudiera volver a esa noche, volvería a elegir el momento en que nuestros caminos se cruzaron.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-label">Con todo mi cariño</div>
+        <h2>Una carta para ti</h2>
+        <div class="paper">
+          <p>Mi querida Zaira:</p>
+          <p>A veces las palabras no alcanzan para explicar lo que una persona significa para nosotros, pero quiero intentarlo. Desde que llegaste a mi vida, te has convertido en alguien muy especial. Me encanta todo de ti: tu forma de ser, tus detalles, tu manera de hacer que un momento sencillo se vuelva inolvidable.</p>
+          <p>Me gusta pensar en aquella noche en que nos conocimos, porque nunca habría imaginado que de un baile nacería un sentimiento tan grande. Me haces feliz de muchas maneras, incluso con las cosas más pequeñas, y quiero que siempre tengas presente lo importante que eres para mí.</p>
+          <p>No necesito que seas perfecta; me encanta que seas tú. Gracias por existir, por cada sonrisa, cada instante y cada recuerdo que vamos construyendo.</p>
+          <p>Quiero seguir compartiendo momentos contigo, cuidando lo bonito que tenemos y recordándote cuánto te quiero.</p>
+          <p>Con muchísimo amor,<br><strong>Alguien que te ama ♡</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-label">Pequeños grandes motivos</div>
+        <h2>Lo que amo de ti</h2>
+        <div class="reasons">
+          <button class="reason" data-message="Tu forma de ser hace que todo tenga algo especial."><span>🌷</span>Tu forma de ser</button>
+          <button class="reason" data-message="Tu sonrisa puede convertir un día común en uno bonito."><span>♡</span>Tu sonrisa</button>
+          <button class="reason" data-message="Amo cada pequeño detalle que te hace ser tú."><span>✨</span>Tus pequeños detalles</button>
+          <button class="reason" data-message="Porque no hay nadie como tú, y eso es lo que te hace tan especial."><span>🦋</span>Que seas tú</button>
+        </div>
+        <p class="hidden-message" id="reasonMessage" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap song">
+        <div class="section-label">Una canción para nosotros</div>
+        <h2> nuestra canción ♡</h2>
+        <div class="vinyl" aria-hidden="true"></div>
+        <p><strong>“Hasta la Muerte”</strong><br>Eslabón Armado</p>
+        <p class="song-note">Quise incluir una canción de tu grupo favorito. Toca el botón para escucharla en YouTube. La reproducción se abre allí para respetar los derechos de la música.</p>
+        <a class="btn" href="https://www.youtube.com/results?search_query=Eslabon+Armado+Hasta+la+Muerte" target="_blank" rel="noopener noreferrer">Escuchar nuestra canción ♫</a>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="wrap">
+        <div class="small-heart">♡ ♡ ♡</div>
+        <div class="section-label">Y nunca lo olvides</div>
+        <h2>Zaira</h2>
+        <p>Gracias por ser parte de mi vida.<br>Te amo. ❤️</p>
+        <div class="small-heart">♡</div>
+      </div>
+    </section>
+  </main>
+  <footer>Hecho con cariño, especialmente para Zaira ♡</footer>
+
+  <script>
+    const hearts = document.getElementById('hearts');
+    for (let i = 0; i < 18; i++) {
+      const heart = document.createElement('span');
+      heart.className = 'heart';
+      heart.textContent = Math.random() > .5 ? '♡' : '♥';
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.animationDuration = (9 + Math.random() * 10) + 's';
+      heart.style.animationDelay = (-Math.random() * 18) + 's';
+      heart.style.fontSize = (12 + Math.random() * 18) + 'px';
+      hearts.appendChild(heart);
+    }
+    const message = document.getElementById('reasonMessage');
+    document.querySelectorAll('.reason').forEach(button => {
+      button.addEventListener('click', () => {
+        message.textContent = button.dataset.message;
+        message.classList.remove('show');
+        void message.offsetWidth;
+        message.classList.add('show');
+      });
+    });
+  </script>
+</body>
+</html>
